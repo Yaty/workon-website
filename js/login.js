@@ -7,11 +7,13 @@
         type: 'POST',
         url: 'http://localhost:3000/api/accounts/login',
         success: function(response) { // on success..
-            $('#created').html(response); // update the DIV
-        }
+			storage.setAccessToken(response.id);
+            $(location).attr('href', './dashboard/index.html')
+        },
+		
     });
-
-    return false; // cancel original event to prevent form submitting
-});
+	
+    return false;
+  });
 
 })(jQuery); // End of use strict

@@ -7,7 +7,7 @@
         type: 'POST',
         url: 'http://localhost:3000/api/accounts',
         success: function(response) { // on success..
-            $('#created').html(response); // update the DIV
+			$(location).attr('href', './login.html')
         }
     });
 
