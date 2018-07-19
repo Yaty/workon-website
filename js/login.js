@@ -8,7 +8,8 @@
         url: 'http://localhost:3000/api/accounts/login',
         success: function(response) { // on success..
 			storage.setAccessToken(response.id);
-            $(location).attr('href', './dashboard/index.html')
+			storage.setAccountId(response.userId);
+            $(location).attr('href', './admin/index.html')
         },
 		
     });
